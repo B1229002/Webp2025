@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聖誕樹</title>
+</head>
+<body>
+
+  <script>
+    function tree(n) {
+      printTreeTop(n);  // 打印樹的上半部分
+      printTreeBottom(n);  // 打印樹的下半部分
+    }
+
+    function printTreeTop(n) {
+      for (let i = 0; i < n; i++) {
+        let spaces = repeatchar(n - i - 1, ' ');  // 每層星星前的空格數
+        let stars = repeatchar(2 * i + 1, '*');   // 每層星星的數量
+        console.log(spaces + stars);  // 在 console 中打印每一層
+      }
+    }
+
+    function printTreeBottom(n) {
+      let spaces = repeatchar(n - 1, ' ');  // 樹幹的空格數
+      for (let i = 0; i < 3; i++) { 
+        console.log(spaces + '*');  // 在 console 中打印每一層樹幹
+      }
+    }
+
+    function repeatchar(n, arg_char) {
+      return arg_char.repeat(n);  // 重複字符
+    }
+
+    // 呼叫函數來畫出聖誕樹
+    tree(4);
+  </script>
+
+</body>
+</html>
